@@ -12,7 +12,7 @@
 .header {
   width: 100%;
   height: 20vh;
-
+  background-color: rgba(58, 122, 241, 0.856);
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -57,7 +57,7 @@
   margin-left: 35%;
 }
 .header .app-title h1 {
-  font-size: 5vh;
+  font-weight: bold;
   font-family: "Encode Sans Expanded", sans-serif;
 }
 /* Welcome Container Part */
@@ -67,7 +67,7 @@
   align-items: center;
   flex-direction: column;
   background-position: center;
-  background-image: url("./components/welcome/pokemon.jpeg");
+  background-image: url("./components/welcome/pokemon-in-the-wild.png");
 }
 
 .welcome h3 {
@@ -114,13 +114,14 @@ input[type="searchText"]:focus {
   max-width: 250px;
   padding: 10px 10px;
   border-radius: 10px;
-  background-color: rgb(22, 218, 103);
+  background-color: rgb(1, 20, 105);
   color: white;
+  font-weight: bold;
   font-size: 14;
 }
 
 .playbtn:hover {
-  background-color: red;
+  background-color: rgb(226, 134, 218);
   color: white;
 }
 #play {
@@ -138,11 +139,8 @@ input[type="searchText"]:focus {
 .pokefight-container,
 .Fightarena-container,
 .announcement-container {
-  background-image: linear-gradient(
-    to right,
-    rgba(3, 121, 3, 0.653),
-    rgba(188, 14, 14, 0.765)
-  );
+  background-image: url("./components/welcome/pokemon-in-the-wild.png");
+
   width: 100vw;
   height: 80vh;
 }
@@ -221,7 +219,7 @@ main {
   border: 1px solid black;
   border-radius: 10px;
   padding: 5px;
-  background-color: rgb(255, 253, 127);
+  background-color: rgb(130, 198, 253);
   font-weight: bold;
 }
 
@@ -258,12 +256,12 @@ main {
 }
 
 .pagination .page-num:hover {
-  background-color: rgb(53, 102, 13);
+  background-color: rgb(9, 76, 121);
   color: white;
 }
 
 .pagination .active {
-  background-color: rgb(53, 102, 13);
+  background-color: rgb(9, 76, 121);
   color: white;
 }
 
@@ -290,9 +288,13 @@ main {
   font-size: 1em;
 }
 .randomPokemon {
-  position: absolute;
+  display: inline-block;
+  border: 3px solid rgb(38, 34, 34);
+  text-align: center;
+  border-radius: 20px;
   margin-left: 60%;
-  top: 53%;
+  position: absolute;
+  top: 55%;
 }
 .vs {
   position: absolute;
@@ -300,8 +302,8 @@ main {
   top: 70%;
 }
 .pokemonimg {
-  height: 300px;
-  width: 300px;
+  height: 200px;
+  width: 200px;
   padding: 50px 50px;
 }
 
@@ -371,12 +373,12 @@ main {
 }
 
 #top5 tr {
-  background-color: #f2f6a7;
   color: rgb(38, 37, 37);
+  font-weight: bold;
 }
 
 #top5 tr:hover {
-  background-color: #ddd;
+  background-color: #7f8887;
 }
 
 #top5 th {

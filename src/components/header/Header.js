@@ -19,8 +19,10 @@ export default function Header() {
   return (
     <div className="header">
       <div className="logo-image"></div>
-      <div className="app-title"></div>
-      <h1>Pokémon Fight Game</h1>
+      <div className="app-title">
+        <h1>Pokémon Fight Game</h1>
+      </div>
+
       <div className="numOfPlayer">
         <img src={numOfIcon} alt="number of active players" />
 

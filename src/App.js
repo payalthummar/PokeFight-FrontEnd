@@ -10,7 +10,8 @@ import FightArena from "./components/fightArena/FightArena";
 import Announcement from "./components/announcement/Announcement";
 
 function App() {
-  const allPokemonsURL = "http://localhost:3080/pokemon";
+  //const allPokemonsURL = "http://localhost:3080/pokemon";
+  const allPokemonsURL = `${process.env.REACT_APP_API_ENDPOINT}/pokemon`;
   const [allPokemons, setAllPokemons] = useState([]);
 
   const [selectedPokemon, setSelectedPokemon] = useState(null);

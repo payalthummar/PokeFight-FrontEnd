@@ -4,8 +4,7 @@ import axios from "axios";
 import numOfIcon from "../header/numOfPlayersIcon.png";
 
 export default function Header() {
-  const numOfActivePlayersURL =
-    "http://localhost:3080/game/leaderboard/players/active";
+  const numOfActivePlayersURL = `${process.env.REACT_APP_API_ENDPOINT}/game/leaderboard/players/active`;
   const [numOfActivePlayers, setNumOfActivePlayers] = useState(0);
 
   useInterval(() => {

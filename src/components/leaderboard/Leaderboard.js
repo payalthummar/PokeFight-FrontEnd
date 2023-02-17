@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 function Leaderboard() {
   const [leaderboard, setLeaderboard] = useState([]);
 
-  const leaderboardURL = "http://localhost:3080/game/leaderboard/top/5";
+  const leaderboardURL = `${process.env.REACT_APP_API_ENDPOINT}/game/leaderboard/top/5`;
 
   useEffect(() => {
     const getLeaderboard = () => {

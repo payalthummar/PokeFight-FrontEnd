@@ -10,13 +10,16 @@ function Welcome({ setPlayerID, setScore }) {
   const submitHandler = async (e) => {
     setError(null);
 
-    const response = await fetch("http://localhost:3080/game/leaderboard", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name }),
-    });
+    const response = await fetch(
+      "https://pokefight-backend-rs0x.onrender.com/game/leaderboard",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name }),
+      }
+    );
 
     const data = await response.json();
 

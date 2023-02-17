@@ -9,8 +9,8 @@ export default function SearchBar({ setSelectedPokemon }) {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
 
-  const allPokemons = "http://localhost:3080/pokemon";
-  const searchPokemonsByName = `http://localhost:3080/pokemon/names?start=${searchText}`;
+  const allPokemons = `${process.env.REACT_APP_API_ENDPOINT}/pokemon`;
+  const searchPokemonsByName = `${process.env.REACT_APP_API_ENDPOINT}/pokemon/names?start=${searchText}`;
   console.log("allpokemon", allPokemons);
   const handleTextChange = (event) => {
     setSearchText(event.target.value);

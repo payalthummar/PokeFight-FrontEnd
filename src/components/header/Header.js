@@ -2,6 +2,7 @@ import { useInterval } from "usehooks-ts";
 import { useState } from "react";
 import axios from "axios";
 import numOfIcon from "../header/numOfPlayersIcon.png";
+import logo from "./logo.png";
 
 export default function Header() {
   const numOfActivePlayersURL = `${process.env.REACT_APP_API_ENDPOINT}/game/leaderboard/players/active`;
@@ -18,9 +19,16 @@ export default function Header() {
 
   return (
     <div className="header">
-      <div className="logo-image"></div>
-      <div className="app-title">
-        <h1>Pokémon Fight Game</h1>
+      <div className="logo-image">
+        <img className="logo-picture" src={logo} alt="logo"></img>
+      </div>
+      <div className="welcome">
+        <h3 className="title">
+          <span className="title-word title-word-1">Welcome </span>
+          <span className="title-word title-word-2">to </span>
+          <span className="title-word title-word-3">play </span>
+          <span className="title-word title-word-4">zone</span>
+        </h3>
       </div>
 
       <div className="numOfPlayer">

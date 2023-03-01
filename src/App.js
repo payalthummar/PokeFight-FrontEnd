@@ -8,8 +8,9 @@ import Welcome from "./components/welcome/Welcome";
 import Pokefight from "./components/pokefight/Pokefight";
 import FightArena from "./components/fightArena/FightArena";
 import Announcement from "./components/announcement/Announcement";
+import Footer from "./components/footer/Footer";
 
-function App() {
+function App(pokemonToDisplay) {
   //const allPokemonsURL = "http://localhost:3080/pokemon";
   const allPokemonsURL = `${process.env.REACT_APP_API_ENDPOINT}/pokemon`;
   const [allPokemons, setAllPokemons] = useState([]);
@@ -28,7 +29,6 @@ function App() {
 
     getAllPokemons();
   }, []);
-  console.log(allPokemons);
 
   return (
     <div className="App">
@@ -72,6 +72,7 @@ function App() {
           }
         />
       </Routes>
+      <Footer />
     </div>
   );
 }

@@ -75,6 +75,7 @@ export default function SearchBar({ setSelectedPokemon }) {
           <>
             {errorMessage === null && searchResults.length > 0 && (
               <DisplayResults
+                searchText={searchText}
                 searchResults={searchResults}
                 setSelectedPokemon={setSelectedPokemon}
               />

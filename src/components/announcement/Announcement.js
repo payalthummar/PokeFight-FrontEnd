@@ -34,30 +34,32 @@ function Announcement({
 
   return (
     <div className="announcement-container">
-      {winner && (
-        <>
-          <h3>You Won !</h3>
-          <div className="winner">
-            <DisplayPokemonCard pokemonToDisplay={selectedPokemon} />
-          </div>
+      <div className="thewinner">
+        {winner && (
+          <>
+            <h1>You win</h1>
+            <div className="winner">
+              <DisplayPokemonCard pokemonToDisplay={selectedPokemon} />
+            </div>
 
-          <button className="playbtn" id="nextTime" onClick={goToNewFight}>
-            Let's fight again
-          </button>
-        </>
-      )}
-      {!winner && (
-        <>
-          <h3>You lost the fight, the computer won</h3>
-          <div className="winner">
-            <DisplayPokemonCard pokemonToDisplay={randomPokemon} />
-          </div>
+            <button className="playbtn" id="nextTime" onClick={goToNewFight}>
+              Let's fight again
+            </button>
+          </>
+        )}
+        {!winner && (
+          <>
+            <h1>You lost the fight</h1>
+            <div className="winner">
+              <DisplayPokemonCard pokemonToDisplay={randomPokemon} />
+            </div>
 
-          <button className="playbtn" id="nextTime" onClick={goToStart}>
-            Maybe next time
-          </button>
-        </>
-      )}
+            <button className="playbtn" id="nextTime" onClick={goToStart}>
+              Maybe next time
+            </button>
+          </>
+        )}
+      </div>
     </div>
   );
 }

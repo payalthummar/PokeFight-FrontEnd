@@ -12,7 +12,7 @@ function RandomPokemon({ allPokemons, setRandomPokemon }) {
   useEffect(() => {
     setRandomPokemon(pokemonToDisplay);
   }, []);
-
+  console.log(pokemonToDisplay);
   return (
     <>
       <div className="randomPokemon">

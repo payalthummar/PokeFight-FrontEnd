@@ -8,10 +8,10 @@ function Welcome({ setPlayerID, setScore }) {
   const navigate = useNavigate();
 
   const submitHandler = async (e) => {
+    e.preventDefault();
     setError(null);
-
     const response = await fetch(
-      "https://pokefight-backend-rs0x.onrender.com/game/leaderboard",
+      "https://pokefight-app.onrender.com/game/leaderboard",
       {
         method: "POST",
         headers: {
@@ -37,30 +37,30 @@ function Welcome({ setPlayerID, setScore }) {
 
   return (
     <div className="container">
-      <div className="welcome">
-        <h3 className="mint">Welcome to our game zone</h3>
+      <div className="body">
+        <div className="playerForm">
+          <form onSubmit={submitHandler}>
+            <h4>Please enter your name</h4>
+            <input
+              type="text"
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+            />
+
+            <button
+              disabled={!name}
+              type="submit"
+              className="playbtn"
+              id="play"
+              onClick={submitHandler}
+            >
+              Let's play
+            </button>
+          </form>
+          {error && <div className="error">{error}</div>}
+        </div>
+        <Leaderboard />
       </div>
-
-      <div className="playerForm">
-        <h4>Please enter your name</h4>
-        <input
-          type="text"
-          onChange={(e) => setName(e.target.value)}
-          value={name}
-        />
-
-        <button
-          type="submit"
-          className="playbtn"
-          id="play"
-          onClick={submitHandler}
-        >
-          Let's play
-        </button>
-
-        {error && <div className="error">{error}</div>}
-      </div>
-      <Leaderboard />
     </div>
   );
 }

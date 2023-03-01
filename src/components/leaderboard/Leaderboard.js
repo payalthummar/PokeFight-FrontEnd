@@ -20,16 +20,20 @@ function Leaderboard() {
     <div className="leaderboard">
       <h2>Leaderboard</h2>
       <table id="top5">
-        <tr>
-          <th> Name </th>
-          <th> Score </th>
-        </tr>
-        {leaderboard.players?.map((item) => (
+        <thead>
           <tr>
-            <td>{item.name}</td>
-            <td>{item.score}</td>
+            <th> Name </th>
+            <th> Score </th>
           </tr>
-        ))}
+        </thead>
+        <tbody>
+          {leaderboard.players?.map((item) => (
+            <tr key={item._id}>
+              <td>{item.name}</td>
+              <td>{item.score}</td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </div>
   );

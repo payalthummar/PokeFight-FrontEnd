@@ -43,34 +43,35 @@ export default function DisplayResults({
   console.log("items", currentItems);
   return (
     <>
-      <div className="paginationSearch">
-        <ReactPaginate
-          breakLabel="..."
-          nextLabel=">>"
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={0}
-          pageCount={pageCount}
-          previousLabel="<<"
-          renderOnZeroPageCount={null}
-          containerClassName="pagination"
-          pageLinkClassName="page-num"
-          previousLinkClassName="page-num"
-          nextLinkClassName="page-num"
-          activeLinkClassName="active"
-        />
+      <div className="leftColumn">
+        <div className="paginationSearch">
+          <ReactPaginate
+            breakLabel="..."
+            nextLabel=">>"
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={0}
+            pageCount={pageCount}
+            previousLabel="<<"
+            renderOnZeroPageCount={null}
+            containerClassName="pagination"
+            pageLinkClassName="page-num"
+            previousLinkClassName="page-num"
+            nextLinkClassName="page-num"
+            activeLinkClassName="active"
+          />
+        </div>
+        <div className="results">
+          <ol className="searchResults" start={itemOffset + 1}>
+            {currentItems.map((item) => (
+              <ul key={uuid()} className="result">
+                <div className="pokemonName" onClick={handlePokemonClick}>
+                  <p>{item.name.english}</p>
+                </div>
+              </ul>
+            ))}
+          </ol>
+        </div>
       </div>
-      <div className="results">
-        <ol className="searchResults" start={itemOffset + 1}>
-          {currentItems.map((item) => (
-            <ul key={uuid()} className="result">
-              <div className="pokemonName" onClick={handlePokemonClick}>
-                <p>{item.name.english}</p>
-              </div>
-            </ul>
-          ))}
-        </ol>
-      </div>
-
       <div className="playerPokemon">
         {pokemonToDisplay !== null && (
           <DisplayPokemonCard pokemonToDisplay={pokemonToDisplay} />

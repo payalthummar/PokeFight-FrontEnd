@@ -1,5 +1,3 @@
-/*@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");*/
 @import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Lora:wght@700&display=swap");
 * {
   padding: 0;
@@ -25,6 +23,7 @@
 .logo-picture {
   height: 75px;
   width: auto;
+  cursor: pointer;
 }
 .welcome {
   grid-column: 2/3;
@@ -130,7 +129,7 @@
   width: 100%;
 }
 .body {
-  height: 70vh;
+  /* height: 70vh; */
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -181,7 +180,7 @@ input[type="searchText"]:focus {
 }
 /* Search bar css */
 .playerForm > form > .playbtn,
-.searchResults > .playbtn {
+.selectedPokefight > .playbtn {
   margin-left: 30px;
   margin-top: 20px;
   min-width: 150px;
@@ -192,6 +191,7 @@ input[type="searchText"]:focus {
   font-weight: 1000;
   font-size: 14;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .playbtn:hover {
@@ -250,12 +250,12 @@ input[type="searchText"]:focus {
   color: white;
 }
 .thewinner h1 {
-  color: #f19100;
+  color: white;
   font-size: 14;
   padding-left: 10px;
 }
 .thewinner h1:hover {
-  color: white;
+  color: #ffd662;
 }
 .thewinner > .winner {
   display: inline-grid;
@@ -366,7 +366,7 @@ main {
 }
 .errorMessage {
   margin-top: 15vh;
-  color: #11686c;
+  color: white;
   font-size: 2rem;
   font-weight: 400;
   text-align: center;
@@ -468,7 +468,7 @@ a.nostyle:visited {
   } /*Text stays hidden*/
 }
 .letsFight h3 {
-  color: rgb(249, 245, 245);
+  color: #f19100;
 }
 .singlePokemon {
   border: 3px solid #11686c;
@@ -547,6 +547,8 @@ a.nostyle:visited {
 }
 a {
   display: inline-block;
+  text-decoration: inherit;
+  color: #11686c;
 }
 .nir > a,
 .nir > h3 {
@@ -630,4 +632,27 @@ th {
   text-align: center;
   background-color: #f19100;
   color: white;
+}
+.pokemonToFight {
+  width: 100vw;
+  min-height: 40vh;
+  display: inline-grid;
+  place-items: left;
+  grid-template-columns: 1fr 1fr 1fr;
+  flex-wrap: wrap;
+}
+.paginationSearch {
+  grid-column: 1/2;
+  position: relative;
+}
+.playerPokemon {
+  grid-column: 2/3;
+  position: relative;
+  margin-top: 50px;
+}
+.leftColumn > .results {
+  place-items: left;
+}
+.result {
+  margin-top: 10px;
 }

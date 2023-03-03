@@ -66,10 +66,13 @@ export default function SearchBar({ setSelectedPokemon }) {
           onChange={handleTextChange}
         />
       </div>
-      <div>
+      <div
+        className="pokemonToFight
+      "
+      >
         {isLoading ? (
           <div className="reactLoader">
-            <PropagateLoader color="red" size={50} />
+            <PropagateLoader color="purple" size={50} />
           </div>
         ) : (
           <>

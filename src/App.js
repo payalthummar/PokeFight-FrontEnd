@@ -11,7 +11,6 @@ import Announcement from "./components/announcement/Announcement";
 import Footer from "./components/footer/Footer";
 
 function App(pokemonToDisplay) {
-  //const allPokemonsURL = "http://localhost:3080/pokemon";
   const allPokemonsURL = `${process.env.REACT_APP_API_ENDPOINT}/pokemon`;
   const [allPokemons, setAllPokemons] = useState([]);
 
@@ -26,9 +25,8 @@ function App(pokemonToDisplay) {
         setAllPokemons(res.data);
       });
     };
-
     getAllPokemons();
-  }, []);
+  }, [allPokemonsURL]);
 
   return (
     <div className="App">

@@ -3,11 +3,15 @@ import { useState } from "react";
 import axios from "axios";
 import numOfIcon from "../header/numOfPlayersIcon.png";
 import logo from "./logo.png";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const numOfActivePlayersURL = `${process.env.REACT_APP_API_ENDPOINT}/game/leaderboard/players/active`;
   const [numOfActivePlayers, setNumOfActivePlayers] = useState(0);
-
+  const navigate = useNavigate();
+  const goToHomePage = () => {
+    navigate("/");
+  };
   useInterval(() => {
     const getAllPokemons = () => {
       axios.get(numOfActivePlayersURL).then((res) => {
@@ -20,7 +24,12 @@ export default function Header() {
   return (
     <div className="header">
       <div className="logo-image">
-        <img className="logo-picture" src={logo} alt="logo"></img>
+        <img
+          className="logo-picture"
+          onClick={goToHomePage}
+          src={logo}
+          alt="logo"
+        ></img>
       </div>
       <div className="welcome">
         <h3 className="title">

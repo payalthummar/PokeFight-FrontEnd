@@ -11,8 +11,8 @@ function Announcement({
 }) {
   let winner;
   const navigate = useNavigate();
-  //const updateScoreURL = `http://localhost:3080/game/leaderboard/${playerID}`;
-  const updateScoreURL = `${process.env.REACT_APP_API_ENDPOINT}/game/leaderboard/${playerID}`;
+  const updateScoreURL = `http://localhost:3080/game/leaderboard/${playerID}`;
+  // const updateScoreURL = `${process.env.REACT_APP_API_ENDPOINT}/game/leaderboard/${playerID}`;
 
   const goToStart = () => {
     axios

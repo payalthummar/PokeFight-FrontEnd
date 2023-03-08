@@ -12,6 +12,7 @@ import Footer from "./components/footer/Footer";
 
 function App(pokemonToDisplay) {
   const allPokemonsURL = `${process.env.REACT_APP_API_ENDPOINT}/pokemon`;
+  // const allPokemonsURL = `http://localhost:3080/pokemon`;
   const [allPokemons, setAllPokemons] = useState([]);
 
   const [selectedPokemon, setSelectedPokemon] = useState(null);
